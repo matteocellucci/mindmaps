@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Scrapbook</title>
+	<script type="text/javascript" src="inc/raphael-min.js"></script>
+	<script type="text/javascript" src="lib/Tree.js"></script>
+	<script type="text/javascript" src="lib/Node.js"></script>
+	<script type="text/javascript" src="src/operating-system.js"></script>
+</head>
+<body>
+<pre id="map"></pre>
+<script type="text/javascript">
+	var map = document.getElementById("map"),
+	    tree = new Tree();
+
+	tree.build(data);
+	tree.traverse(function(node) {
+		var tabbing = "";
+		if(node.level > 0) {
+			tabbing = "  |";
+			for(var i = 1; i < node.level; i++) {
+				tabbing += "   |";
+			}
+			tabbing += "-> ";
+		}
+		var txt = document.createTextNode(tabbing + node.label + "\n");
+		map.appendChild(txt);
+	});
+</script>
+</body>
+</html>
