@@ -1,4 +1,4 @@
-var data = {
+{
 	"Sistemi operativi": {
 		"Processi": {
 			"Dispatcher": null,
@@ -52,20 +52,20 @@ var data = {
 				"Process Control Block": {
 					"Identificazione del processo": {
 						"Id processo": null,
-							"Id processo genitore": null,
-							"Id utente": null
+						"Id processo genitore": null,
+						"Id utente": null
+					},
+					"Stato del processore": {
+						"Registri visibili all'utente": null,
+						"Registri di controllo e di stato": {
+							"Program counter": null,
+							"Codici di condizione": null,
+							"Informazioni di stato": null
 						},
-						"Stato del processore": {
-							"Registri visibili all'utente": null,
-							"Registri di controllo e di stato": {
-								"Program counter": null,
-								"Codici di condizione": null,
-								"Informazioni di stato": null
-							},
-							"Puntatori allo stack": null
-						},
-						"Controllo del processo": {
-							"Scheduling e stato": {
+						"Puntatori allo stack": null
+					},
+					"Controllo del processo": {
+						"Scheduling e stato": {
 							"Stato del processo": null,
 							"Priorità": null,
 							"Informazioni sullo scheduling": null,
@@ -88,4 +88,4 @@ var data = {
 		"Filesystem": null,
 		"Concorrenza": null     
 	}
-};
+}
