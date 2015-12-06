@@ -2,11 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Scrapbook</title>
-	<script type="text/javascript" src="inc/raphael-min.js"></script>
+	<title>MindMap</title>
 	<script type="text/javascript" src="lib/Tree.js"></script>
 	<script type="text/javascript" src="lib/Node.js"></script>
-	<script type="text/javascript" src="src/operating-system.js"></script>
 </head>
 <body>
 <pre id="map"></pre>
@@ -30,7 +28,7 @@
 		var tabbing = "",
 		    npattern = "      |",
 		    ypattern = "      +";
-		if(node.level > 0) {
+		if(node.level > 0)  {
 			if(node.level == 1) {
 				tabbing = ypattern;
 			}
@@ -48,11 +46,12 @@
 		var txt = document.createTextNode(tabbing + node.label + "\n");
 		map.appendChild(txt);
 	});
+	document.title = "MindMap | "+ fileToLoad();
 
 	function ajaxRequest() {
 		var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"];
 		if(window.ActiveXObject) {
-			for(var i=0; i<activexmodes.length; i++) {
+			for(var i = 0; i < activexmodes.length; i++) {
 				try { return new ActiveXObject(activexmodes[i]) }
 				catch(e){ /* suppress error */ }
 			}

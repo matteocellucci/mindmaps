@@ -15,9 +15,13 @@ MindMap is a software to build them. Mind maps are usally useful for students bu
 - [ ] Documentation
 
 ## Changelog
+* **v1.1.0:**
+	- Improve tree data structure
+	- Fix printable style
+	- Fix some minor issue
 * **v1.0.2:**
 	- Add AJAX loading data support
-	- Add fixes to printable viewer style
+	- Fix printable style
 * **v1.0.1:**
 	- Add fixes to printable viewer style
 	- Fix some minor issue
