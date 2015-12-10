@@ -8,13 +8,17 @@ MindMap is a software to build them. Mind maps are usally useful for students bu
 ## Next features
 - [x] Printable viewer
 - [ ] Printable viewer personalization
-- [ ] Graphic viewer
+- [x] Graphic viewer
 - [ ] Graphic viewer personalization
 - [ ] Data archive manager
 - [ ] Interactive data input
 - [ ] Documentation
 
 ## Changelog
+* **v1.2.0:**
+	- Add a radial graphic viewer
+	- Improve Tree data structure builder
+	- Rename printable-mindmap.html in print-mindmap.html
 * **v1.1.0:**
 	- Improve tree data structure
 	- Fix printable style

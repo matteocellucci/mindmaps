@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MindMap</title>
+	<script type="text/javascript" src="inc/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="lib/Tree.js"></script>
+	<script type="text/javascript" src="lib/Node.js"></script>
+	<script type="text/javascript" src="lib/Coordinate.js"></script>
+	<script type="text/javascript" src="lib/ArchContext.js"></script>
+	<script type="text/javascript" src="lib/LabelContext.js"></script>
+	<script type="text/javascript" src="lib/NodeContext.js"></script>
+	<script type="text/javascript" src="lib/RadialTree.js"></script>
+	<style type="text/css">
+	#arch-context, #node-context, #label-context {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#footer {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+<canvas id="arch-context">Your browser doesn't support HTML5 canvas. Please get a more recent browser.</canvas>
+<canvas id="node-context"></canvas>
+<canvas id="label-context"></canvas>
+<noscript>Your browser has JavaScript turned off. Please switch it on from settings.</noscript>
+<script type="text/javascript">
+	var tree = new Tree(),
+	    xhr = ajaxRequest(),
+	    data = null;
+
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			data = JSON.parse(xhr.responseText);
+		}
+	};
+	xhr.open("GET", "src/"+ parseURL("f") +".json", false);
+	xhr.setRequestHeader("Content-type", "application/json");
+	xhr.overrideMimeType("application/json");
+	xhr.send();
+	tree.build(data);
+	
+	var radialtree = new RadialTree(tree, parseInt(parseURL("z")));
+	radialtree.draw();
+	
+	function treeDrawer(subtree, x, y, minangle, maxangle, radius) {
+		var root = new RadialNode(paper, subtree.root.label);
+		root.draw(x, y);
+		var angle = minangle,
+		    angleincrement = (maxangle - minangle) / subtree.children.length;
+		for(var i = 0; i < subtree.children.length; i++) {
+			var min = angle - angleincrement / 2,
+			    max = angle + angleincrement / 2,
+			    tangentlimit = Math.acos(radius / (radius + radiusincrement));
+			angle += angleincrement;
+			if(min < angle - tangentlimit) {
+				min = angle - tangentlimit;
+			}
+			if(max > angle + tangentlimit) {
+				max = angle + tangentlimit;
+			}
+			treeDrawer(
+				subtree.children[i],
+				x + radius * Math.cos(angle),
+				y + radius * Math.sin(angle),
+				min, max,
+				radius + radiusincrement
+			);
+		}
+	}
+		
+	function ajaxRequest() {
+		var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"];
+		if(window.ActiveXObject) {
+			for(var i = 0; i < activexmodes.length; i++) {
+				try { return new ActiveXObject(activexmodes[i]) }
+				catch(e) { /* suppress error */ }
+			}
+		}
+		else if (window.XMLHttpRequest) {
+			return new XMLHttpRequest()
+		}
+		return null;
+	}
+
+	function parseURL(label) {
+		var result = null;
+		location.search.substr(1).split("&").forEach(function(item) {
+			var param = item.split("=");
+			if (param[0] === label) {
+				result = decodeURIComponent(param[1]);
+			}
+		});
+		return result;
+	}
+</script>
+</body>
+</html>
