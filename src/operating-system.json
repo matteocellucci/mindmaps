@@ -4,7 +4,8 @@
 			"Dispatcher": null,
 			"Modelli": {
 				"A due strati": null,
-				"A cinque strati": null
+				"A cinque strati": null,
+				"A sette strati": null
 			},
 			"Scheduling": {
 				"A breve termine": {
@@ -81,11 +82,145 @@
 			}
 		},
 		"Memoria": {
-			"Gestione": null,
-			"Memoria virtuale": null
+			"Gestione": {
+				"Principi fondamentali": {
+					"Rilocazione": null,
+					"Protezione": null,
+					"Condivisione": null,
+					"Organizzazione logica": null
+				},
+				"Partizionamento": {
+					"Statico": {
+						"Frammentazione interna": null
+					},
+					"Dinamico": {
+						"Frammentazione esterna": null
+					},
+					"Buddy system": null
+				},
+				"Paginazione": null,
+				"Segmentazione": null
+			},
+			"Memoria virtuale": {
+				"Thrashing": null,
+				"Translation Lookaside Buffer": null,
+				"Strategie del SO": {
+					"Fetch": {
+						"Paginazione a richiesta": null,
+						"Prepaginazione": null
+					},
+					"Sostituzione": {
+						"Algoritmo ottimo": null,
+						"Least Recently Used": null,
+						"First-In, First-Out": null,
+						"Algoritmo dell'orologio": null
+					},
+					"Posizionamento": null
+				}
+			}
 		},
-		"I/O": null,
+		"I/O": {
+			"Categorie": {
+				"Orientati all'utente": null,
+				"Orientati alla macchina": null,
+				"Di comunicazione": null
+			},
+			"Caratteristiche": {
+				"Quantità di dati": null,
+				"Applicazioni": null,
+				"Complessità di controllo": null,
+				"Unità di trasferimento": null
+			},
+			"Tecniche": {
+				"I/O programmato": null,
+				"Interrupt-driven I/O": null,
+				"Direct Memory Access": null
+			},
+			"Problemi di progettazione": {
+				"Efficienza": null,
+				"Generalità": null
+			},
+			"Livelli": {
+				"I/O logico": null,
+				"I/O sul dispositivo": null,
+				"Scheduling e controllo": null,
+				"Gestione directory": null,
+				"Filesystem": null,
+				"Organizzazione fisica": null
+			},
+			"Buffer": {
+				"Tipologia": {
+					"Singolo": null,
+					"Doppio": null,
+					"Circolare": null
+				},
+				"Tipi di trasferimento": {
+					"Orientati ai blocchi": null,
+					"Orientati al flusso": null
+				}
+			},
+			"Scheduling del disco": {
+				"Tempistica": {
+					"Seek time": null,
+					"Rotational delay": null,
+					"Access time": null
+				},
+				"Algoritmi": {
+					"First-In, First-Out": null,
+					"Last-In, First-Out": null,
+					"Shortest Service Time First": null,
+					"Scan": null,
+					"C-Scan": null,
+					"N-Step-Scan": null
+				}
+			}
+		},
 		"Filesystem": null,
-		"Concorrenza": null     
+		"Concorrenza": {
+			"Mutex e sincronizzazione": {
+				"Supporto hardware": {
+					"Istruzione test-and-set": null,	
+				},
+				"Supporto software": {
+					"Algoritmo di Dekker": null,
+					"Algoritmo di Peterson": null
+				},
+				"Semafori": {
+					"Semafori binari": null
+				},
+				"Probelmi esplicativi": {
+					"Produttore/consumatore": null,
+					"Lettori/scrittori": null
+				}
+				"Scambio di messaggi": {
+					"Sincronizzazione": {
+						"Invio e ricezioni bloccanti": null,
+						"Invio non bloccante e ricezione bloccante": null,
+						"Invio e ricezione non bloccanti": null
+					},
+					"Indirizzamento": {
+						"Diretto": null,
+						"Indiretto": null
+					}
+				}
+			},
+			"Deadlock e starvation": {
+				"Problema dei filosofi a tavola": null,
+				"Risorse": {
+					"Riutilizzabile e non riutilizzabile": null
+					"Grafo di Holt": null
+				},
+				"Condizioni di deadlock": {
+					"Mutua esclusione": null,
+					"Possesso e attesa": null,
+					"Assenza di prerilascio": null,
+					"Attesa circolare": null
+				},
+				"Prevenzione del deadlock": null,
+				"Esclusione del deadlock": {
+					"Stato sicuro": null
+				}
+			}
+		}
 	}
 }
