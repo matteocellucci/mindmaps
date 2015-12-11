@@ -179,7 +179,7 @@
 		"Concorrenza": {
 			"Mutex e sincronizzazione": {
 				"Supporto hardware": {
-					"Istruzione test-and-set": null,	
+					"Istruzione test-and-set": null	
 				},
 				"Supporto software": {
 					"Algoritmo di Dekker": null,
@@ -191,7 +191,7 @@
 				"Probelmi esplicativi": {
 					"Produttore/consumatore": null,
 					"Lettori/scrittori": null
-				}
+				},
 				"Scambio di messaggi": {
 					"Sincronizzazione": {
 						"Invio e ricezioni bloccanti": null,
@@ -207,7 +207,7 @@
 			"Deadlock e starvation": {
 				"Problema dei filosofi a tavola": null,
 				"Risorse": {
-					"Riutilizzabile e non riutilizzabile": null
+					"Riutilizzabile e non riutilizzabile": null,
 					"Grafo di Holt": null
 				},
 				"Condizioni di deadlock": {
