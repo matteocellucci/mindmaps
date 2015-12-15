@@ -38,10 +38,14 @@ Example from [Color - Wikipedia](https://en.wikipedia.org/wiki/Color):
 ```
 * **2# Visualize map:** open with your browser `print-mindmap.html`, for a printable version, or `desktop-mindmap.html`, for a visual version. In your url bar append to the address `?f=filename` as GET parameter.
 Example:
-```file:///your/path/to/printable-mindmap.html?f=filedataname```
+```
+file:///your/path/to/printable-mindmap.html?f=filedataname
+```
 In case of desktop version, it is possible to use another parameter to set a properly zoom (suggested max 250) like `z=100`.
-Example
-```file:///your/path/to/printable-mindmap.html?f=filedataname&z=200```
+Example:
+```
+file:///your/path/to/printable-mindmap.html?f=filedataname&z=200
+```
 
 ## Next features
 - [x] Printable viewer
