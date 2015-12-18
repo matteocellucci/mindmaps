@@ -3,8 +3,9 @@ MindMap is a software to build them. Mind maps are usally useful for students bu
 
 ## How to use it
 * **1# Add data:** Create your data for the map: data is fromatted using JSON and stored in 'src/filedataname.json'. JSON is an open format to transmit data object consisting of attribute-values pairs. It is pretty easy to learn, here a [link from tutsplus.com](http://code.tutsplus.com/tutorials/understanding-json--active-8817). Structure follows these simple rules:
-- Leafs have `null` value;
-- Children should be encapsulated in another deeper level;
+	- Leafs have `null` value;
+	- Children should be encapsulated in another deeper level;
+
 Example from [Color - Wikipedia](https://en.wikipedia.org/wiki/Color):
 ```
 {
@@ -37,14 +38,15 @@ Example from [Color - Wikipedia](https://en.wikipedia.org/wiki/Color):
 }
 ```
 * **2# Visualize map:** open with your browser `print-mindmap.html`, for a printable version, or `desktop-mindmap.html`, for a visual version. In your url bar append to the address `?f=filename` as GET parameter.
+
 Example:
 ```
-file:///your/path/to/printable-mindmap.html?f=filedataname
+file:///your/path/to/print-mindmap.html?f=filedataname
 ```
 In case of desktop version, it is possible to use another parameter to set a properly zoom (suggested max 250) like `z=100`.
 Example:
 ```
-file:///your/path/to/printable-mindmap.html?f=filedataname&z=200
+file:///your/path/to/print-mindmap.html?f=filedataname&z=200
 ```
 
 ## Next features
@@ -58,6 +60,7 @@ file:///your/path/to/printable-mindmap.html?f=filedataname&z=200
 
 ## Troubleshooting
 * Set zoom up to 250 could bring a browser crash
+* Some browsers don't support cross-scripting
 
 ## Changelog
 * **v1.3.0:**
