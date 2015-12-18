@@ -23,24 +23,31 @@
 	xhr.overrideMimeType("application/json");
 	xhr.send();
 	tree.build(data);
-	tree.traverse(function(node) {
+	tree.traverse(function(node, parent) {
 		var tabbing = "",
-		    npattern = "      |",
-		    ypattern = "      +";
-		if(node.level > 0)  {
-			if(node.level == 1) {
-				tabbing = ypattern;
+		    spaceing = "      ",
+		    lastchild = false;	
+		if(node.level > 0) {
+			if(parent.children[parent.children.length - 1].root.label == node.label) {
+				lastchild = true;
+			}
+			if(lastchild) {
+				tabbing = "\u2514";
 			}
 			else {
-				tabbing = npattern;
+				tabbing = "\u251C";
 			}
-			for(var i = 1; i < node.level - 1; i++) {
-				tabbing += npattern;
+			tabbing += "\u2500\u2500 ";
+			while(parent != null) {
+				if(parent.isLastChild()) {
+					tabbing = " " + spaceing + tabbing;
+				}
+				else {
+					tabbing = "\u2502" + spaceing + tabbing;
+				}
+				parent = parent.parent;
 			}
-			if(node.level > 1) {
-				tabbing += ypattern;
-			}
-			tabbing += "--- ";
+	//		tabbing = spaceing + tabbing;
 		}
 		var txt = document.createTextNode(tabbing + node.label + "\n");
 		map.appendChild(txt);

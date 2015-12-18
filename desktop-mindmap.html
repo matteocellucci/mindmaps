@@ -43,32 +43,6 @@
 	var radialtree = new RadialTree(tree, parseInt(parseURL("z")));
 	radialtree.draw();
 	
-	function treeDrawer(subtree, x, y, minangle, maxangle, radius) {
-		var root = new RadialNode(paper, subtree.root.label);
-		root.draw(x, y);
-		var angle = minangle,
-		    angleincrement = (maxangle - minangle) / subtree.children.length;
-		for(var i = 0; i < subtree.children.length; i++) {
-			var min = angle - angleincrement / 2,
-			    max = angle + angleincrement / 2,
-			    tangentlimit = Math.acos(radius / (radius + radiusincrement));
-			angle += angleincrement;
-			if(min < angle - tangentlimit) {
-				min = angle - tangentlimit;
-			}
-			if(max > angle + tangentlimit) {
-				max = angle + tangentlimit;
-			}
-			treeDrawer(
-				subtree.children[i],
-				x + radius * Math.cos(angle),
-				y + radius * Math.sin(angle),
-				min, max,
-				radius + radiusincrement
-			);
-		}
-	}
-		
 	function ajaxRequest() {
 		var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"];
 		if(window.ActiveXObject) {

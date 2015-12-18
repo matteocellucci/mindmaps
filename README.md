@@ -60,6 +60,11 @@ file:///your/path/to/printable-mindmap.html?f=filedataname&z=200
 * Set zoom up to 250 could bring a browser crash
 
 ## Changelog
+* **v1.3.0:**
+	- Add traverse tree functionality
+	- Fix printable version issue
+	- Refine printable version style
+	- Fix some minor issue
 * **v1.2.1:**
 	- Fix README.md
 * **v1.2.0:**
