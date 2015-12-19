@@ -46,7 +46,7 @@ file:///your/path/to/print-mindmap.html?f=filedataname
 In case of desktop version, it is possible to use another parameter to set a properly zoom (suggested max 250) like `z=100`.
 Example:
 ```
-file:///your/path/to/print-mindmap.html?f=filedataname&z=200
+file:///your/path/to/desktop-mindmap.html?f=filedataname&z=200
 ```
 
 ## Next features
